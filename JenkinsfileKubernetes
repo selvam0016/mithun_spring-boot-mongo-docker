@@ -24,10 +24,7 @@ node{
      }
      
      stage("Deploy To Kuberates Cluster"){
-       kubernetesDeploy(
-         configs: 'springBootMongo.yml', 
-         kubeconfigId: 'KUBERNATES_CONFIG',
-         enableConfigSubstitution: true
+       sh 'kubectl apply -f pringBootMongo.yml'
         )
      }
 	 
